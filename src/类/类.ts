@@ -9,6 +9,11 @@
 //     }
 // }
 
+function create(): string;
+function create() {
+    return '234';
+}
+
 class Users {
     //下面是属性列表
     readonly id: number //永远不能改变 如果是数组不可以复制 但是可以push
@@ -55,3 +60,19 @@ users.gender = '女'
 // users.publish('文章6')
 users.height = 2;
 console.log(users.height);
+
+
+// 访问器
+class Son {
+    constructor(private _name: string) {}
+
+    set name(val: string) {
+        this._name = val + 'hh';//对_name 进行处理
+    }
+
+    get name() {
+        return this._name
+    }
+}
+const son = new Son('hhh');
+son.name = '123';

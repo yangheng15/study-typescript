@@ -64,7 +64,7 @@ let person = {
         console.log(this.sound);
     }
 }
-let duck: Duck = person;
+// let duck: Duck = person;
 //下面的报错
 
 //直接赋值报错 可以使用鸭子变形法，通过使用变量赋值
@@ -119,3 +119,4 @@ function createSquare(config: SquareConfig): { color: string; area: number } {
 }
 
 let mySquare = createSquare({ colour: "red", width: 100 } as SquareConfig);
+
