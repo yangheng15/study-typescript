@@ -16,6 +16,7 @@ let p:Person = {
     }
 }
 
+
 type Condition = (n: number) => boolean;
 // type Condition { //括号就是定界符 不代表对象
 //     (n: number): boolean
@@ -67,7 +68,7 @@ let person = {
 // let duck: Duck = person;
 //下面的报错
 
-//直接赋值报错 可以使用鸭子变形法，通过使用变量赋值
+//直接赋值报错 因为赋值的对象会直接受Duck类型限制 而通过使用鸭子变形法，重新定义一个变量赋值，ts自动推导这个变量的类型，如果是Duck类型兼容就不会报错；
 // let duck: Duck = {
 //     name: '伪装',
 //     sound: "嘎嘎嘎",
@@ -77,15 +78,15 @@ let person = {
 // };
 
 
-// let obj = {
-//     name: '伪装',
-//     sound: "嘎嘎嘎" as "嘎嘎嘎",
-//     swin() {
-//         console.log(this.sound);
-//     }
-// }
+let camouflageDuck = {
+    name: '伪装',
+    sound: "嘎嘎嘎" as "嘎嘎嘎",
+    swin() {
+        console.log(this.sound);
+    }
+}
 
-// let objDuck: Duck = obj;
+let objDuck: Duck = camouflageDuck;
 
 
 

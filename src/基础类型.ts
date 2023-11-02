@@ -11,6 +11,48 @@ u = {
 // 其他类型
 //联合类型
 let name : string | undefined = undefined;
+interface Bird {
+    fly(): void;
+    layEggs(): void;
+}
+
+interface Fish {
+    swim(): void;
+    layEggs(): void;
+}
+
+const samllPet: Fish | Bird = {
+    fly(){},
+    layEggs(){},
+    swim(){},
+}
+
+declare function getSmallPet(): Fish | Bird;
+
+let pet = getSmallPet();
+pet.layEggs();
+pet.fly(); // 报错
+pet.swim(); // 报错
+
+// 交叉类型
+interface ClassA{
+    name:string;
+    age:number
+}
+interface ClassB{
+    name:string;
+    phone:number;
+}
+
+type Class = ClassA & ClassB
+let info:Class = {
+    name:'zhagsan',
+    age:18,
+    phone:1573875555
+}
+
+type isNever = number & string; // 永远没有既有number类型又有string类型交集的值，所以是never
+
  //字面量
 //  let a: 'A' = '123';
 let gender: "男" | "女"; 

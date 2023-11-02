@@ -64,6 +64,8 @@ console.log(users.height);
 
 // 访问器
 class Son {
+    readonly arr: number[]= [1,2]
+
     constructor(private _name: string) {}
 
     set name(val: string) {
@@ -75,4 +77,6 @@ class Son {
     }
 }
 const son = new Son('hhh');
-son.name = '123';
+// son.name = '123';
+son.arr.push(1);
+console.log(son.arr);

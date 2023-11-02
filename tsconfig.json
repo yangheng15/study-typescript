@@ -1,26 +1,24 @@
 {
-  "compilerOptions": { //配置变异选项
-    "target": "ES2016",
-    "module": "CommonJS",//模块化标准 编译后的代码使用的模块化标准 
-    "lib": [
-      "ES7"
-    ],
-    "outDir": "./dist",
-    "strict": true,
-    "removeComments": true,
-    "esModuleInterop": false, //启用es模块化标准和非es模块化标准进行交互
-    "noEmitOnError": false,//错误是不生成编译结果
-    "moduleResolution": "Node", //设置模块解析策略
-    "strictPropertyInitialization": true,//类中严格属性初始化
-  },
-  // "files": [
-  //   "./src/index.ts"
-  // ],
-  "include": [
-    "./src"
-  ], //只编译src下面的ts文件
-  "exclude": [
-    "node_modules",
-    "**/*.spec.ts"
-  ]
+    "compilerOptions": {
+        //配置变异选项
+        "target": "ES2016",
+        "module": "CommonJS", //模块化标准 编译后的代码使用的模块化标准
+        "lib": [
+            // 默认
+            "ES7"
+        ],
+        "outDir": "./dist",
+        "strict": true,
+        "removeComments": true,
+        "esModuleInterop": false, //启用es模块化标准和非es模块化标准进行交互
+        "noEmitOnError": false, //错误是不生成编译结果
+        "moduleResolution": "Node", //设置模块解析策略
+        "strictPropertyInitialization": true //类中严格属性初始化
+    },
+    // "files": [ // 指定编译一个文件和这个文件依赖的文件
+    //   "./src/index.ts"
+    // ],
+    //只编译src下面的ts文件
+    "include": ["./src"],
+    "exclude": ["node_modules", "**/*.spec.ts"]
 }
